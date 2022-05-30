@@ -13,8 +13,6 @@ from loss import ASMLoc_Base_Loss, ASMLoc_Loss
 from net_evaluation import ANETDetection, upgrade_resolution, get_proposal_oic, nms, result2json, grouping
 from datetime import datetime
 
-import pdb
-
 def train(args, model, dataloader, criterion, optimizer, cur_epoch=0, logger=None, step=0, num_steps=0):
     model.train()
     print("-------------------------------------------------------------------------------")

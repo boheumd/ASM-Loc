@@ -13,8 +13,6 @@ from loss import ASMLoc_Base_Loss, ASMLoc_Loss
 from net_evaluation import ANETDetection, upgrade_resolution, get_proposal_oic, nms, result2json, grouping
 from datetime import datetime
 
-import pdb
-
 def train(args, model, dataloader, criterion, optimizer, cur_epoch=0, logger=None, step=0, num_steps=0):
     model.train()
     print("-------------------------------------------------------------------------------")
@@ -359,8 +357,6 @@ def generate_pseudo_segment(args, model, dataloader, step=0):
 
 
 def generate_dynamic_segment_weights(args, pseudo_segment_dict, step=0):
-    # dynamic_segment_weight_path = os.path.join(args.save_dir, 'dynamic_segment_weights_pred_step{}'.format(step), 
-    #         'gamma{}_alpha{:.1f}_delta{:.1f}'.format(args.gamma, args.alpha, args.delta))
     dynamic_segment_weight_path = os.path.join(args.save_dir, 'dynamic_segment_weights_pred_step{}'.format(step))
     os.makedirs(dynamic_segment_weight_path, exist_ok=True)
     for vid_name in pseudo_segment_dict['results']:
@@ -388,7 +384,7 @@ def generate_dynamic_segment_weights(args, pseudo_segment_dict, step=0):
                     prediction_list.append([t_start, t_end, pred["score"], pred["label"]])
             prediction_list = sorted(prediction_list, key=lambda k: k[2], reverse=True)
 
-            # select top Q% segments to filter low-confidence segments
+            # select top Q% segments to filter out low-confidence segments
             segment_score_list = []
             for pred in prediction_list:
                 segment_score_list.append(pred[2])

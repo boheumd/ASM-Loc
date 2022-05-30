@@ -69,7 +69,6 @@ class MHSA_Inter(nn.Module):
         self.num_pos = num_pos
 
         self.scale = self.dim_head ** -0.5
-        # self.pos_emb_t = RelPosEmb1D(self.num_pos, self.dim_head)
 
         self.conv_query = nn.Conv1d(
             self.dim_in, self.dim_inner, kernel_size=1, stride=1, padding=0
