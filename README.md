@@ -9,9 +9,7 @@ To address this problem, we propose ASM-Loc, a novel WTAL framework that enables
 Our framework entails three segment-centric components: (i) dynamic segment sampling for compensating the contribution of short actions; (ii) intra- and inter-segment attention for modeling action dynamics and capturing temporal dependencies; (iii) pseudo instance-level supervision for improving action boundary prediction.
 Furthermore, a multi-step refinement strategy is proposed to progressively improve action proposals along the model training process.
 
-![](./figs/teaser.png){:height=50% width=50%}
-<!-- <img src="teaser.png" width="200"> -->
-
+![](./figs/teaser.png)
 
 
 ## Requirements
@@ -23,27 +21,27 @@ pip install -r requirements.txt
 
 ## Dataset
 We evaluate our ASM-Loc on two popular benchmark datasets THUMOS-14 and ActivityNet-1.3. 
-Before running the code, please download the dataset from the link provided in [ACM-Net](https://github.com/ispc-lab/ACM-Net).
+Before running the code, please download the dataset from the link provided in [this repo](https://github.com/ispc-lab/ACM-Net).
 Unzip it under the `data/` folder and make sure the data structure is as below.
 
    ```
     ├── data
-    └── THUMOS14
-        ├── gt.json
-        ├── split_train.txt
-        ├── split_test.txt
-        └── train
-            ├── ...
-        └── test
-            ├── ...
-    └── ActivityNet13
-        ├── gt.json
-        ├── split_train.txt
-        ├── split_test.txt
-        └── train
-            ├── ...
-        └── test
-            ├── ...
+        └── THUMOS14
+            ├── gt.json
+            ├── split_train.txt
+            ├── split_test.txt
+            └── train
+                ├── ...
+            └── test
+                ├── ...
+        └── ActivityNet13
+            ├── gt.json
+            ├── split_train.txt
+            ├── split_test.txt
+            └── train
+                ├── ...
+            └── test
+                ├── ...
    ```
 
 ## Running
@@ -69,7 +67,7 @@ python main_ActivityNet.py --batch_size 64 --test --checkpoint saved_model/Activ
 ```
 
 ## Results
-    *  Note that the performance of checkpoints we provided is slightly different than the orignal paper! Details are as follows:
+Note that the performance of checkpoints we provided is slightly different than the orignal paper! Details are as follows:
 
    <div align="center" id="table_result">
    <table>
