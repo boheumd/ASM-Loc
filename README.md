@@ -53,7 +53,7 @@ python main_THUMOS.py --batch_size 16
 python main_ActivityNet.py --batch_size 64
 
 ## Testing ##
-# First, download the checkpoints(https://drive.google.com/file/d/1JofEQg3vn2oe9JiJg2WugrBBDYoehxta/view?usp=sharing) into "saved_model" directory and pass it as the checkpoint flag. 
+First, download the [checkpoints](https://drive.google.com/file/d/1JofEQg3vn2oe9JiJg2WugrBBDYoehxta/view?usp=sharing) into "saved_model" directory and pass it as the checkpoint flag. 
 
 # For the THUMOS-14 datasets.
 python main_THUMOS.py --batch_size 16 --test --checkpoint saved_model/THUMOS
