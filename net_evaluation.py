@@ -8,7 +8,6 @@ from sklearn.metrics import average_precision_score
 from scipy import interpolate
 from collections import defaultdict
 
-import pdb
 
 # ACKNOWLEDGEMENT.
 # THIS PART CODE IS CONSTRUCTED BASED ON ACTIVITYNET GIT-HUB REPO.
